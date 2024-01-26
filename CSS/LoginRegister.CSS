@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+.ContenedorLogin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    gap: 0px 0px;
+    grid-template-areas: 'Welcome-Back Login-Register';
+}
+
+.Welcome-Back {
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(0,23,194,1) 91%);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.Welcome-Back p {
+    margin-left: 30px;
+    font-size: 75px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.Grupo-Entradas {
+    height: 280px;
+}
+
+.Login-Register {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.Formulario {
+    width: 75%;
+    max-width: 450px;   
+    padding: 50px 60px 70px;
+    text-align: center;
+}
+
+.Formulario h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #000;
+    position: relative;
+}
+
+.Formulario h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #2b5fb6;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Campo-Entradas {
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+
+.Campo-Entradas i {
+    margin-left: 15px;
+    color: #999;
+}
+
+form p {
+    text-align: left;
+    font-size: 15px;
+    color: B6BBC4;
+}
+
+form p a {
+    text-decoration: none;
+    color: #2b5fb6;
+}
+
+.Campo-Boton {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Campo-Boton button {
+    flex-basis: 48%;
+    background: #2b5fb6;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+}
+
+.Campo-Boton button.Disable {
+    background: #B6BBC4;
+    color: #555;
+}
+
+@media (max-width: 1000px) {
+    .ContenedorLogin {
+        grid-template-columns: 1fr;
+    }
+
+    .Welcome-Back {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .Campo-Boton {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .Campo-Boton button {
+        flex-basis: auto;
+        margin-bottom: 10px;
+    }
+
+    .Formulario {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/LoginRegister.CSS">
+    <script src="https://kit.fontawesome.com/bf924a6af6.js" crossorigin="anonymous"></script>
+    <title>Bienvenido</title>
+</head>
+<body>
+    <div class="ContenedorLogin">
+        <div class="Welcome-Back">
+            <p>Welcome <br>Back</p>
+        </div>
+        <div class="Login-Register">
+            <div class="Formulario">
+                <h1 id="Titulo">Registrarse</h1>
+                <form action="">
+                    <div class="Grupo-Entradas">
+                        <div class="Campo-Entradas" id="CampoNombre">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" placeholder="Nombre">
+                        </div>
+
+                        <div class="Campo-Entradas" id="CampoCorreo">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" placeholder="Correo Electrónico">
+                        </div>
+
+                        <div class="Campo-Entradas" id="CampoClave">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" placeholder="Contraseña">
+                        </div>
+                        <p>Olvidaste tu contraseña? <a href="#">Haz click aqui!</a></p>
+                    </div>
+                    <div class="Campo-Boton">
+                        <button type="button" id="Registro">Registrarse</button>
+                        <button type="button" id="IniciarSesion" class="Disable">Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="JavaScript/LoginRegister.JS"></script>
+</body>
+</html>
