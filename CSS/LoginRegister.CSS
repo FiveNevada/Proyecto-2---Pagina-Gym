@@ -120,6 +120,31 @@ form p a {
     transition: background 1s;
 }
 
+.Boton-Accion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.Boton-Accion button {
+    flex-basis: 48%;
+    flex-basis: auto;
+    margin-bottom: 10px;
+    background: #2b5fb6;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.Boton-Accion button.Ocultar {
+    display: none;
+}
+
 .Campo-Boton button.Disable {
     background: #B6BBC4;
     color: #555;

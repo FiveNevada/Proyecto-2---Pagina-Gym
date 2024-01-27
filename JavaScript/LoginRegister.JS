@@ -1,6 +1,8 @@
 let BotonRegistrar = document.getElementById("Registro");
 let BotonIniciarSesion = document.getElementById("IniciarSesion");
 let CampoNombre = document.getElementById("CampoNombre");
+let BotonIngresar = document.getElementById("Ingresar");
+let BotonRegistro = document.getElementById("Registrarse");
 let Titulo = document.getElementById("Titulo")
 
 BotonIniciarSesion.onclick = function(){
@@ -8,6 +10,8 @@ BotonIniciarSesion.onclick = function(){
     Titulo.innerHTML = 'Iniciar Sesión';
     BotonRegistrar.classList.add('Disable');
     BotonIniciarSesion.classList.remove('Disable');
+    BotonIngresar.classList.remove('Ocultar');
+    BotonRegistro.classList.add('Ocultar');
 }
 
 BotonRegistrar.onclick = function(){
@@ -15,4 +19,6 @@ BotonRegistrar.onclick = function(){
     Titulo.innerHTML = 'Registrarse';
     BotonRegistrar.classList.remove('Disable');
     BotonIniciarSesion.classList.add('Disable');
+    BotonRegistro.classList.remove('Ocultar');
+    BotonIngresar.classList.add('Ocultar');
 }
