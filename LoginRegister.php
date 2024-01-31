@@ -1,3 +1,14 @@
+<?php 
+    session_start();
+
+    if(isset($_SESSION['usuario'])){
+        header("location: Index.php");
+    }
+
+
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +26,7 @@
         <div class="Login-Register">
             <div class="Formulario">
                 <h1 id="Titulo">Registrarse</h1>
-                <form action="">
+                <form action="PHP/Actions_DB.php" method="POST" name="miFormulario" onsubmit="return validarFormulario()">
                     <div class="Campo-Boton">
                         <button type="button" id="Registro">Registrarse</button>
                         <button type="button" id="IniciarSesion" class="Disable">Iniciar Sesión</button>
@@ -23,24 +34,24 @@
                     <div class="Grupo-Entradas">
                         <div class="Campo-Entradas" id="CampoNombre">
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" placeholder="Nombre">
+                            <input type="text" placeholder="Nombre" name="Nombre_Completo">
                         </div>
 
                         <div class="Campo-Entradas" id="CampoCorreo">
                             <i class="fa-solid fa-envelope"></i>
-                            <input type="email" placeholder="Correo Electrónico">
+                            <input type="email" placeholder="Correo Electrónico" name="Email">
                         </div>
 
                         <div class="Campo-Entradas" id="CampoClave">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Contraseña">
+                            <input type="password" placeholder="Contraseña" name="Password">
                         </div>
                         <p>Olvidaste tu contraseña? <a href="#">Haz click aqui!</a></p>
                     </div>
 
                     <div class="Boton-Accion">
-                        <button type="button" id="Ingresar" class="Ocultar">Iniciar Sesión</button>
-                        <button type="button" id="Registrarse">Registrarse</button>
+                        <button type="submit" id="Ingresar" name="Ingresar" class="Ocultar">Iniciar Sesión</button>
+                        <button type="submit" id="Registrarse" name="Registrarse" >Registrarse</button>
                     </div>
                 </form>
             </div>
