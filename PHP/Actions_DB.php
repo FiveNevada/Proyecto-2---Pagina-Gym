@@ -8,10 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Email = $_POST['Email'];
     $Password = $_POST['Password'];
 
-    // Aplicar encriptacion SHA-512
-    $hashedPassword = hash('sha512', $Password);
+    // Aplicar encriptacion
+    $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
 
-    // Verificar si se hizo clic en el botón de registro
     if (isset($_POST["Registrarse"])) {
         $VerificarCorreo = mysqli_query($Connection, "SELECT * FROM users WHERE email='$Email'");
         
@@ -42,14 +41,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Verificar si se hizo clic en el botón de inicio de sesión
     elseif (isset($_POST["Ingresar"])) {
-        $ValidarLogin = mysqli_query($Connection, "SELECT * FROM users WHERE email='$Email' and pass='$hashedPassword'");
-
-        if(mysqli_num_rows($ValidarLogin) > 0){
-            $_SESSION['usuario'] = $Email;
-            header('location: ../Index.php');
-            exit;
+        $query = "SELECT pass FROM users WHERE email='$Email'";
+        $resultado = mysqli_query($Connection, $query);
+        $fila = mysqli_fetch_assoc($resultado);
+    
+        if ($fila !== null && isset($fila['pass'])) {
+            $hashAlmacenado = $fila['pass'];
+    
+            if (password_verify($Password, $hashAlmacenado)) {
+                $_SESSION['usuario'] = $Email;
+                header('location: ../Index.php');
+                exit;
+            } else {
+                echo '
+                <script>
+                    alert("Contraseña incorrecta");
+                    window.location = "../LoginRegister.php";
+                </script>';
+            }
         } else {
             echo '
             <script>
@@ -58,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </script>';
         }
     }
+    
 
     mysqli_close($Connection);
 }

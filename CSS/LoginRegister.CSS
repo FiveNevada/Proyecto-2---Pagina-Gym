@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+
+:root {
+    --main-color: #161A30;
+    --second-color: #B6BBC4;
+    --text-color: #02171d;
+    --bg-color: #fff;
+    --btn-color: #394367;
+
+    --box-shadow: 2px 2px 10px 4px rgb(14 55 54 / 15%);
+}
 
 * {
     margin: 0;
@@ -17,17 +28,25 @@
 }
 
 .Welcome-Back {
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(0,23,194,1) 91%);
+    background-image: url('../Images/FondoPantalla.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
 }
 
+.Contenedor-Nombre {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .Welcome-Back p {
+    font-family: 'Merriweather', serif;
     margin-left: 30px;
     font-size: 75px;
-    font-weight: 500;
-    color: #fff;
+    font-weight: 900;
+    color: var(--text-color);
 }
 
 .Grupo-Entradas {
@@ -35,6 +54,7 @@
 }
 
 .Login-Register {
+    background: var(--second-color);
     display: flex;
     justify-content: center;
     height: 100%;
@@ -51,7 +71,7 @@
 .Formulario h1 {
     font-size: 30px;
     margin-bottom: 60px;
-    color: #000;
+    color: var(--text-color);
     position: relative;
 }
 
@@ -60,7 +80,7 @@
     width: 30px;
     height: 4px;
     border-radius: 3px;
-    background: #2b5fb6;
+    background: var(--btn-color);
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -110,7 +130,7 @@ form p a {
 
 .Campo-Boton button {
     flex-basis: 48%;
-    background: #2b5fb6;
+    background: var(--btn-color);
     color: #fff;
     height: 40px;
     border-radius: 20px;
@@ -132,7 +152,7 @@ form p a {
     flex-basis: 48%;
     flex-basis: auto;
     margin-bottom: 10px;
-    background: #2b5fb6;
+    background: var(--btn-color);
     color: #fff;
     height: 40px;
     border-radius: 20px;

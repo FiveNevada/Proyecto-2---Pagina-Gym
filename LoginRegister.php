@@ -21,7 +21,9 @@
 <body>
     <div class="ContenedorLogin">
         <div class="Welcome-Back">
-            <p>Welcome <br>Back</p>
+            <div class="Contenedor-Nombre">
+                <p>Progress Fitness</p>
+            </div>
         </div>
         <div class="Login-Register">
             <div class="Formulario">
